@@ -1,0 +1,37 @@
+extends base_layout 
+
+block content 
+    div(class="container")
+        form(action="/createuser", method="post")
+            div(class="mb-3 mt-3")
+                label(for="firstname", class="form-label") First Name: 
+                input(type="text", class="form-control", id="firstname", name="firstname", placeholder="First Name")
+            
+            div(class="mb-3")
+                label(for="lastname", class="form-label") Last Name: 
+                input(type="text", class="form-control", id="lastname", name="lastname", placeholder="Last Name")
+
+            div(class="mb-3")
+                label(for="email", class="form-label") Email: 
+                input(type="email", class="form-control", id="email", name="email", placeholder="Email")
+
+            div(class="mb-3")
+                label(for="dob", class="form-label") Date of Birth: 
+                input(type="date", class="form-control", id="dob", name="dob", placeholder="Data of Birth")
+
+            div(class="mb-3")
+                label(for="skills", class="form-label") Choose Your Domain:
+                select(class="form-select", name="skills")
+                    option Frontend
+                    option Backend
+                    option Fullstack
+
+            div(class="mb-3")
+                label(for="skills", class="form-label") Choose Your Skills:
+                select(class="form-select", name="skills", multiple)
+                    option C++
+                    option Java
+                    option Python 
+                    option JavaScript
+
+            button(type="submit", class="btn btn-primary") Submit
