@@ -2,7 +2,7 @@ extends base_layout
 
 block content 
     div(class="container")
-        form(action="/createuser", method="post")
+        form(action="", method="post")
             div(class="mb-3 mt-3")
                 label(for="firstname", class="form-label") First Name: 
                 input(type="text", class="form-control", id="firstname", name="firstname", placeholder="First Name")
@@ -20,8 +20,8 @@ block content
                 input(type="date", class="form-control", id="dob", name="dob", placeholder="Data of Birth")
 
             div(class="mb-3")
-                label(for="skills", class="form-label") Choose Your Domain:
-                select(class="form-select", name="skills")
+                label(for="domain", class="form-label") Choose Your Domain:
+                select(class="form-select", name="domain")
                     option Frontend
                     option Backend
                     option Fullstack
