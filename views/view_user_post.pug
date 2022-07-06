@@ -2,17 +2,18 @@ extends base_layout
 
 block content 
     div(class="container")
-        if firstname 
-            p= firstname 
-        if lastname 
-            p= lastname
-        if email 
-            p= email
-        if dob 
-            p= dob 
-        if domain 
-            p= domain 
-        if skills 
-            ul 
-                each val in skills 
-                    li= val
+        div(class="user-info")
+            h2 User Information: 
+            if firstname && lastname
+                p Name: #{firstname + " " + lastname} 
+            if email 
+                p Email: #{email}
+            if dob 
+                p DOB: #{dob}
+            if domain 
+                p Domain: #{domain}
+            if skills 
+                p Skills:
+                ul 
+                    each val in skills 
+                        li= val
