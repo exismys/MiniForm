@@ -1,4 +1,3 @@
-const { urlencoded } = require('express');
 const express = require('express');
 const connectDB = require('./dbconnection');
 const {check, validationResult} = require('express-validator');
@@ -53,6 +52,8 @@ app.post('/createuser', [
         const skills = [];
         if (typeof(userInfo.skills) == String) {
             skills.push(userInfo.skills);
+        } else {
+            skills = userInfo.skills;
         }
         user.skills = skills;
         await user.save();
@@ -63,9 +64,19 @@ app.post('/createuser', [
 })
 
 app.get('/viewuser', (req, res) => {
-    res.render('view_user')
+    res.render('view_user_get');
 })
 
-app.post('/viewuser', (req, res) => {
+app.post('/viewuser', async (req, res) => {
+    const emailKey = req.body.email;
+    const user = await User.findOne({email: emailKey});
 
+    res.render('view_user_post', {
+        firstname: user.firstname,
+        lastname: user.lastname,
+        email: user.email,
+        dob: user.dob,
+        domain: user.domain,
+        skills: user.skills
+    });
 })

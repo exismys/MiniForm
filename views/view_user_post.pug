@@ -1,0 +1,18 @@
+extends base_layout 
+
+block content 
+    div(class="container")
+        if firstname 
+            p= firstname 
+        if lastname 
+            p= lastname
+        if email 
+            p= email
+        if dob 
+            p= dob 
+        if domain 
+            p= domain 
+        if skills 
+            ul 
+                each val in skills 
+                    li= val
