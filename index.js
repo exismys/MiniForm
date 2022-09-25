@@ -49,7 +49,7 @@ app.post('/createuser', [
         user.email = userInfo.email;
         user.dob = userInfo.dob;
         user.domain = userInfo.domain;
-        const skills = [];
+        let skills = [];
         if (typeof(userInfo.skills) == String) {
             skills.push(userInfo.skills);
         } else {
